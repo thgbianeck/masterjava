@@ -5,21 +5,15 @@ import br.com.bieniek.thread.threads.NombreThread;
 public class EjemploExtenderThread {
 
     public static void main(String[] args) throws InterruptedException {
-        Thread hilo = new NombreThread("John Doe");
+        NombreThread
+                hilo = new NombreThread("John Doe"),
+                hilo2 = new NombreThread("Mary Doe"),
+                hilo3 = new NombreThread("Pepe");
 
-        System.out.println(((NombreThread) hilo).getInformation());
 
         hilo.start();
-        System.out.println(((NombreThread) hilo).getInformation());
-
-//        Thread.sleep(1000L);
-        System.out.println(((NombreThread) hilo).getInformation());
-
-        Thread hilo2 = new NombreThread("Mary Doe");
-
-        System.out.println(((NombreThread) hilo2).getInformation());
-
         hilo2.start();
-        System.out.println(((NombreThread) hilo2).getInformation());
+        hilo3.start();
+        System.out.println(hilo.getInformation());
     }
 }
